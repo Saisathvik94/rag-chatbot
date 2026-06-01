@@ -88,15 +88,6 @@ export async function getVideoTranscript(
       channelData.items?.[0]?.statistics?.subscriberCount ?? 0
     );
   }
-  console.log({
-    title,
-    channelName,
-    subscriberCount,
-    views,
-    likes,
-    comments,
-    hookText,
-  });
 
   return {
     videoId,

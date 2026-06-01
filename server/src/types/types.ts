@@ -5,19 +5,22 @@ export interface TranscriptSegment {
 }
 
 export interface YoutubeVideo {
-  videoId: string
-  title: string
-  transcript: string
-  segments: TranscriptSegment[]
+  videoId: string;
+  title: string;
+
+  channelName: string;
+  subscriberCount: number;
+
+  views: number;
+  likes: number;
+  comments: number;
+
+  hookText: string;
+
+  transcript: string;
+  segments: TranscriptSegment[];
 }
 
-export interface Chunk {
-  videoId: string
-  videoLabel: "A" | "B"
-  chunkIndex: number
-  content: string
-  startTime?: number
-}
 
 export interface ChatMessage {
   role: "user" | "assistant"
@@ -34,9 +37,13 @@ export interface ChatResponse {
 }
 
 export interface RetrievedChunk {
-  videoId: string
-  videoLabel: "A" | "B"
-  chunkIndex: number
+  videoLabel: string,
+  title: string,
+  channelName: string,
+  subscriberCount: number,
+  views: number,
+  likes: number,
+  comments: number,
+  hookText: string,
   content: string
-  score: number
 }
